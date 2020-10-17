@@ -9,34 +9,34 @@ fun main() {
 
 fun agoToText(sec: Int): String {
 
-    val minute = 60;
-    val hour = minute * 60;
-    val day = hour * 24;
-    val day_2 = day * 2;
-    val day_3 = day * 3;
+    val minute = 60
+    val hour = minute * 60
+    val day = hour * 24
+    val day2 = day * 2
+    val day3 = day * 3
 
     return when (sec) {
         in 0..minute -> "только что"
 
         in minute + 1..hour -> {
-            val currentMinute = sec / 60;
-            val ending = getEnding(time = currentMinute);
+            val currentMinute = sec / 60
+            val ending = getEnding(time = currentMinute)
             "$currentMinute $ending назад"
         }
         in hour + 1..day -> {
-            val currentHour = sec / (60 * 60);
-            val ending = getEnding(false, currentHour);
+            val currentHour = sec / (60 * 60)
+            val ending = getEnding(false, currentHour)
             "$currentHour $ending назад"
         }
-        in day + 1..day_2 -> "сегодня"
-        in day_2 + 1..day_3 -> "вчера"
+        in day + 1..day2 -> "сегодня"
+        in day2 + 1..day3 -> "вчера"
         else -> "давно"
     }
 }
 
 fun getEnding(isMinute: Boolean = true, time: Int): String {
-    val timeString = time.toString();
-    val lastChar = timeString[timeString.length - 1];
+    val timeString = time.toString()
+    val lastChar = timeString.last()
 
     return if (isMinute) {
         when (lastChar) {

@@ -2,9 +2,9 @@ package part_2
 
 fun main() {
 
-    val amount = 13000.00;
-    val previousAmount = 100.00;
-    val cartType = "Vk Pay";
+    val amount = 13000.00
+    val previousAmount = 100.00
+    val cartType = "Vk Pay"
 
     if (checkLimits(cartType, previousAmount, amount)) {
         print("Привышен лимит перевода")
