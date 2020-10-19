@@ -6,6 +6,12 @@ fun main() {
     val previousAmount = 100.00
     val cartType = "Vk Pay"
 
+    makeTransfer(cartType, previousAmount, amount)
+
+}
+
+fun makeTransfer(cartType:String, previousAmount: Double, amount: Double) {
+
     if (checkLimits(cartType, previousAmount, amount)) {
         print("Привышен лимит перевода")
         return
@@ -13,8 +19,8 @@ fun main() {
 
     print("Комиссия за перевод: ${countCommission(cartType, previousAmount, amount)}")
 
-
 }
+
 
 fun countCommission(cartType: String = "Vk Pay", previousAmount: Double, amount: Double): Double {
 
