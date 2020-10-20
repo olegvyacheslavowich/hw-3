@@ -51,7 +51,7 @@ class MainKtTest {
             cartType = cartType
         )
 
-        assertEquals(result, 72.8, 0.0);
+        assertEquals(result, 100.8, 0.0);
     }
 
     @Test
